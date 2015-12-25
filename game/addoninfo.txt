@@ -1,0 +1,23 @@
+"AddonInfo"
+{
+	addonTitle				"Counter-Strike TD: Reborn"
+	addonVersion			0.0.0.1
+	addonTagline			"Counter-Strike TD"
+	addonAuthor				"Elron MacBong"
+	addonSteamGroupName		""
+	addonAuthorSteamID		""
+	addonContent_Campaign	0
+	addonURL0				"http://www.valvesoftware.com/"
+	addonDescription		""
+	
+	"IsTemplate"			"0"
+	"IsPlayable"			"1"
+	
+	maps					"cs_td"
+	TeamCount				"1"
+	
+	"cs_td"
+	{
+		"MaxPlayers"		"8"
+	}
+}
