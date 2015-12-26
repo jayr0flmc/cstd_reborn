@@ -1,0 +1,39 @@
+if(GameWave == nil) then
+	_G.GameWave = class({})
+	GameWave.__index = GameWave
+end
+
+
+
+function GameWave:SpawnWave(waveID, playerID)
+	DebugPrint('[GameWave] Spawning wave #'..waveID..' for player #'..(playerID + 1)..'...')
+	
+	local spawner = Entities:FindByName(nil, string.format('p%s_spawner', (playerID + 1)))
+	local initialWP = Entities:FindByName(nil, string.format('p%s_pc1', (playerID + 1)))
+	
+	for i = 1, 10 do
+		DebugPrint('i: '..i)
+		local creep = CreateUnitByName('unit_donkey', spawner:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+		
+		--[[
+		local creep = CreateUnitByName('dota_npc_hero_viper', spawner:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+		creep:Stop()
+		creep:SetInitialGoalEntity(initialWP)
+		]]--
+	end
+end
+
+function GameWave:SpawnWaves(round)
+	DebugPrint('[GameWave] Spawning waves for round #'..round..'...')
+	
+	for i = 0, 7 do
+		local player = PlayerResource:GetPlayer(i)
+		
+		if(player) then GameWave:SpawnWave(round, i) end
+	end
+end
+
+
+
+function GameWave:ApplyAI(creep)
+end

@@ -1,0 +1,58 @@
+if(EDT_Rounds == nil) then
+	_G.EDT_Rounds = class({})
+	EDT_Rounds.__index = EDT_Rounds
+end
+
+function EDT_Rounds.new()
+	local self = EDT_Rounds()
+	EDT_Rounds = self
+	
+	self.bPreperation = false
+	self.iPreperationTime = 0
+	self.iPreperationTimeLeft = 0
+	
+	self.bRunning = false
+	self.iRound = 0
+	self.iMaxRounds = 0
+	
+	self:ReadRoundConfig()
+	
+	
+	
+	return self
+	
+	--[[
+	EDT_Rounds.bPreperation = false
+	EDT_Rounds.iPreperationTime = 0
+	EDT_Rounds.iPreperationTimeLeft = 0
+	
+	EDT_Rounds.bRunning = false
+	EDT_Rounds.iRound = 0
+	EDT_Rounds.iMaxRounds = 0
+	
+	EDT_Rounds:ReadRoundConfig()
+	]]--
+end
+
+function EDT_Rounds:ReadRoundConfig()
+	local kv = LoadKeyValues('scripts/maps/'..GetMapName()..'.txt')
+	if(not kv) then return end
+	
+	self.iPreperationTime = kv.PreperationTime
+	self.iMaxRounds = kv.MaxWaves
+end
+
+
+
+function EDT_Rounds:Begin()
+	DebugPrint('[GameRound] Starting round-based system...')
+	
+	self.bPreperation = true
+	self.iPreperationTimeLeft = self.iPreperationTime
+	
+	self.iRound = 0
+	
+	DebugPrint('bPreperation: '..tostring(self.bPreperation))
+	DebugPrint('iPreperationTimeLeft: '..self.iPreperationTimeLeft)
+	DebugPrint('iRound: '..self.iRound)
+end

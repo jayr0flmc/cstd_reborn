@@ -20,8 +20,8 @@
 		// Abilities
 		//---------------------------------------------------------------------------------
 		"AbilityLayout"				"6"
-		"Ability1"					"build_tower_usp45"
-		"Ability2"					""
+		"Ability1"					"build_tower_usp45_scripted"
+		"Ability2"					"build_tower_usp45_datadriven"
 		"Ability3"					""
 		"Ability4"					""
 		"Ability5"					""
@@ -34,7 +34,7 @@
 		
 		// Attack
 		//---------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"153"
 		"AttackDamageMax"			"171"
 		"AttackDamageType"			"DAMAGE_TYPE_PURE"

@@ -1,0 +1,77 @@
+if(GameRound == nil) then
+	_G.GameRound = class({})
+	GameRound.__index = GameRound
+	
+	GameRound.Preperation = true
+	GameRound.Round = 0
+	GameRound.Running = false
+end
+
+
+
+function GameRound:Begin()
+	DebugPrint('[GameRound] Starting round-based system...')
+	
+	GameRound.Preperation = true
+	GameRound.Round = 0
+	GameRound.Running = false
+	GameRound.TimePreperation = 10
+	GameRound.TimeLeft = 0
+	
+	GameRound:StartPreperation()
+end
+
+function GameRound:StartPreperation()
+	DebugPrint('[GameRound] Starting preperation...')
+	GameRules:SendCustomMessage('Starting preperation...', 0, 0)
+	GameRound.TimeLeft = GameRound.TimePreperation
+	
+	Timer:CreateTimer(function()
+		local timeLeft = GameRound.TimeLeft
+		GameRound.TimeLeft = GameRound.TimeLeft - 1
+		DebugPrint('[GameRound] timeLeft: '..timeLeft)
+		if(GameRound.TimeLeft == 0) then
+			DebugPrint('[GameRound] Ending...')
+			
+			GameRound:EndPreperation()
+		else
+			DebugPrint('[GameRound] Running...')
+			
+			return 1.0
+		end
+	end)
+end
+function GameRound:EndPreperation()
+	DebugPrint('[GameRound] Ending preperation...')
+	GameRules:SendCustomMessage('Starting preperation...', 0, 0)
+	
+	GameRound.Round = GameRound.Round + 1
+	
+	GameRound:StartRound()
+end
+
+function GameRound:StartRound()
+	DebugPrint('[GameRound] Starting round '..GameRound.Round..'...')
+	GameRules:SendCustomMessage('Starting round '..GameRound.Round..'...', 0, 0)
+	
+	GameRound.Running = true
+	
+	GameWave:SpawnWaves(GameRound.Round)
+	
+	--[[
+	Timer:CreateTimer(function()
+		if(GameRound.Running == true) then
+			GameRound:EndRound()
+		end
+	end)
+	]]--
+end
+function GameRound:EndRound()
+	DebugPrint('[GameRound] Ending round '..GameRound.Round..'...')
+	GameRules:SendCustomMessage('Ending round '..GameRound.Round..'...', 0, 0)
+	
+	GameRound.Running = false
+	GameRound.TimeLeft = GameRound.TimePreperation
+	
+	--GameRound:StartPreperation()
+end

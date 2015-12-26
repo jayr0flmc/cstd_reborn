@@ -1,6 +1,103 @@
 // Dota Units File
 "DOTAUnits"
 {
+	"Version"	"1"
+	
+	//=================================================================================
+	// Tower: USP .45
+	//=================================================================================
+	"npc_cstd_tower_usp45"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/items/wards/alliance_ward/alliance_ward.vmdl"
+		"ModelScale"					"1.0"
+		"SoundSet"						"Tower.Water"
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"256"
+		"Level"							"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		"Ability7"						""
+		"Ability8"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"401"
+		"AttackDamageMax"				"425"
+		"AttackDamageType"				"DAMAGE_TYPE_PURE"
+		"AttackRate"					"0.2"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2500"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+	}
+	
+	
+	
 	"npc_dota_creature_gnoll_assassin"
 	{
 		"Model"	"models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"

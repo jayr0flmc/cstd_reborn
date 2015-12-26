@@ -1,0 +1,32 @@
+if(EDT_Player == nil) then
+	DebugPrint('[EDT Player] Creating player game object ...')
+	
+	_G.EDT_Player = class({})
+	EDT_Player.__index = EDT_Player
+	
+	DebugPrint('[EDT Player] ... done')
+end
+
+
+
+function EDT_Player:AssignBuilder(player, playerID)
+	local classname = 'npc_dota_hero_tinker'
+	local spawner = string.format('p%s_spawner', playerID + 1)
+	local point = Entities:FindByName(nil, spawner):GetAbsOrigin()
+	DebugPrint('[EDT Player] spawner: '..spawner)
+	
+	local hero = CreateHeroForPlayer(classname, player)
+	hero:SetControllableByPlayer(playerID, true)
+	hero:SetPlayerID(playerID)
+	hero:SetOrigin(point)
+	
+	
+	
+			--local player = PlayerResource:GetPlayer(i)
+			--local spawner = string.format('p%s_spawner', tostring(i + 1))
+			--local point = Entities:FindByName(nil, spawner):GetOrigin()
+			--local hero = CreateHeroForPlayer('npc_dota_hero_tinker', player)
+			
+			--hero:SetOrigin(point)
+			--hero:SetPlayerID(player:GetPlayerID())
+end

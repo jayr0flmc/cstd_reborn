@@ -21,20 +21,24 @@ COLOR = {
 
 
 
-function DebugPrint(...)
-	local dPrint = Convars:GetInt('edt_debugPrint') or -1
+function Debug(prefix, message)
+	local output = Convars:GetInt('edt_debug_output') or -1
+	if(output == -1 and EDT_DEBUG_OUTPUT) then output = 1 end
 	
-	if(dPrint == -1 and EDT_DEBUG_PRINT) then dPrint = 1 end
-	if(dPrint == 1) then print(...) end
-end
-function DebugPrintTable(...)
-	local dPrint = Convars:GetInt('edt_debugPrint') or -1
+	if(prefix ~= '') then prefix = '[EDT '..prefix..']' else prefix = '[EDT]' end
+	message = prefix..' '..message
 	
-	if(dPrint == -1 and EDT_DEBUG_PRINT) then dPrint = 1 end
-	if(dPrint == 1) then PrintTable(...) end
+	if(output == 1) then print(message) end
 end
-function PrintTable(t, indent, done)
-	--print(string.format('PrintTable type %s', type(keys)))
+
+function DebugTable(...)
+	local output = Convars:GetInt('edt_debug_output') or -1
+	if(output == -1 and EDT_DEBUG_OUTPUT) then output = 1 end
+	
+	if(output == 1) then PrintTable(...) end
+end
+function PrintTable(t, ident, done)
+	--print(string.format('PrintTable type %s', type(t)))
 	if(type(t) ~= 'table') then return end
 	
 	done = done or {}
@@ -72,4 +76,3 @@ function PrintTable(t, indent, done)
 		end
 	end
 end
-

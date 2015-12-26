@@ -13,10 +13,18 @@
 	"IsTemplate"			"0"
 	"IsPlayable"			"1"
 	
-	maps					"cs_td"
+	maps					"cs_td cs_td_water cs_td_tower_test"
 	TeamCount				"1"
 	
 	"cs_td"
+	{
+		"MaxPlayers"		"8"
+	}
+	"cs_td_water"
+	{
+		"MaxPlayers"		"8"
+	}
+	"cs_td_tower_test"
 	{
 		"MaxPlayers"		"8"
 	}

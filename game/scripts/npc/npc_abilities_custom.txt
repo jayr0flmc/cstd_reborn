@@ -2,9 +2,34 @@
 "DOTAAbilities"
 {
 	//=================================================================================
-	// TOWER: USP .45
+	// TOWER: USP .45 - Scripted
 	//=================================================================================
-	"build_tower_usp45"
+	"build_tower_usp45_scripted"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder_tinker/build_tower_usp45"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"	"rubick_empty1"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_NONE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"				"1"
+		
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+	}
+	
+	
+	
+	//=================================================================================
+	// TOWER: USP .45 - Datadriven
+	//=================================================================================
+	"build_tower_usp45_datadriven"
 	{
 		// General
 		//---------------------------------------------------------------------------------

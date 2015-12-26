@@ -5,6 +5,8 @@
 require('edt/utils')
 require('edt/core')
 
+require('abilities/builder_tinker/tower')
+
 
 
 --[[
@@ -16,7 +18,8 @@ require('edt/core')
 	See EDT_Core:PostLoadPrecache() in core.lua for more information
 ]]--
 function Precache(context)
-	DebugPrint('[EDT] Performing pre-load precache...')
+	Debug('', 'Performing pre-load precache...')
+	Debug('Core', 'Performing pre-load precache...')
 	
 	-- Particles can be precached individually or by folder
 	-- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
@@ -45,6 +48,6 @@ function Precache(context)
 end
 
 function Activate()
-	GameRules.GameMode = EDT_Core()
+	GameRules.GameMode = EDT_Core.new()
 	GameRules.GameMode:InitGameMode()
 end
