@@ -1,0 +1,15 @@
+Syntax:
+ - major.minor[.build[.revision]]
+
+Software-State-Numbers (first, second and third positions):
+ - 0: alpha
+ - 1: beta
+ - 2: release candidate
+ - 3: final release
+
+For instance:
+ - 1.2.0.1 instead of 1.2-a1
+ - 1.2.1.2 instead of 1.2-b2
+ - 1.2.2.3 instead of 1.2-rc3
+ - 1.2.3.0 instead of 1.2-r
+ - 1.2.3.5 instead of 1.2-r5

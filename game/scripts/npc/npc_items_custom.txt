@@ -1,3 +1,75 @@
 "DOTAAbilities"
 {
+	//=================================================================================
+	// BUILDING: Weapons Facility
+	//=================================================================================
+	"item_cstd_building_weapons_facility"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"ID"						"1010"
+		"BaseClass"					"item_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityTextureName"		"rubick_empty2"
+		
+		// Basic Rules
+		//---------------------------------------------------------------------------------
+		"ItemCost"					"100"
+		"ItemPurchasable"			"0"
+		"ItemSellable"				"0"
+		"ItemDroppable"				"0"
+		"ItemKillable"				"0"
+		
+		// Stocking
+		//---------------------------------------------------------------------------------
+		"ItemStockMax"				"0"
+		"ItemStockTime"				"0"
+		"ItemStockInitial"			"0"
+		
+		// Ownership
+		//---------------------------------------------------------------------------------
+		"ItemShareability"			"ITEM_NOT_SHAREABLE"
+		
+		// Charges
+		//---------------------------------------------------------------------------------
+		"ItemInitialCharges"		"2"
+		"ItemDisplayCharges"		"1"
+		"ItemRequiresCharges"		"1"
+		
+		// Stacking & Consumable
+		//---------------------------------------------------------------------------------
+		"ItemStackable"				"0"
+		"ItemPermanent"				"0"
+		
+		// Auto-Casting
+		//---------------------------------------------------------------------------------
+		"ItemCastOnPickup"			"0"
+		
+		// Upgradeability
+		//---------------------------------------------------------------------------------
+		"MaxUpgradeLevel"			"1"
+		"ItemBaseLevel"				"1"
+		
+		// Recipes
+		//---------------------------------------------------------------------------------
+		
+		// Disassembling
+		//---------------------------------------------------------------------------------
+		//"ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		//"ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		
+		// Events & Actions
+		//---------------------------------------------------------------------------------
+		"OnAbilityStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/items/building/item_cstd_building_weapons_facility.lua"
+				"Function"		"OnAbilityStart"
+			}
+		}
+	}
 }

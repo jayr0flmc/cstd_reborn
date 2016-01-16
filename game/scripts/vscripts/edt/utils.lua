@@ -21,56 +21,61 @@ COLOR = {
 
 
 
-function Debug(prefix, message)
+function EDT:Debug(prefix, message)
 	local output = Convars:GetInt('edt_debug_output') or -1
 	if(output == -1 and EDT_DEBUG_OUTPUT) then output = 1 end
 	
-	if(prefix ~= '') then prefix = '[EDT '..prefix..']' else prefix = '[EDT]' end
-	message = prefix..' '..message
+	prefix = tostring(prefix)
+	message = tostring(message)
+	
+	if(message == nil or message == '') then return end
+	
+	if(prefix ~= '') then prefix = string.format('[EDT %s]', prefix) else prefix = '[EDT]' end
+	message = string.format('%s %s', prefix, message)
 	
 	if(output == 1) then print(message) end
 end
 
-function DebugTable(...)
+function EDT:DebugTable(...)
 	local output = Convars:GetInt('edt_debug_output') or -1
 	if(output == -1 and EDT_DEBUG_OUTPUT) then output = 1 end
 	
-	if(output == 1) then PrintTable(...) end
+	if(output == 1) then self:PrintTable(...) end
 end
-function PrintTable(t, ident, done)
-	--print(string.format('PrintTable type %s', type(t)))
+function EDT:PrintTable(t, ident, done)
+	print(string.format('PrintTable type %s', type(t)))
 	if(type(t) ~= 'table') then return end
 	
 	done = done or {}
 	done[t] = true
-	indent = indent or 0
+	ident = ident or 0
 	
 	local l = {}
-	for k, v in pairs(t) do
-		table.insert(l, k)
+	for key, val in pairs(t) do
+		table.insert(l, key)
 	end
 	table.sort(l)
 	
-	for k, v in ipairs(l) do
+	for key, val in ipairs(l) do
 		-- Ignore FDesc
 		if(v ~= 'FDesc') then
-			local value = t[v]
+			local value = t[val]
 			
 			if(type(value) == 'table' and not done[value]) then
 				done[value] = true
 				
-				print(string.rep('\t', indent)..tostring(v)..':')
-				PrintTable(value, indent + 2, done)
+				print(string.rep('\t', ident)..tostring(val)..':')
+				self:PrintTable(value, ident + 2, done)
 			elseif(type(value) == 'userdata' and not done[value]) then
 				done[value] = true
 				
-				print(string.rep('\t', indent)..tostring(v)..': '..tostring(value))
-				PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+				print(string.rep('\t', ident)..tostring(val)..':')
+				self:PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), ident + 2, done)
 			else
-				if(t.FDesc and tFDesc[v]) then
-					print(string.rep('\t', indent)..tostring(t.FDesc[v]))
+				if(t.FDesc and tFDesc[val]) then
+					print(string.rep('\t', ident)..tostring(t.FDesc[val]))
 				else
-					print(string.rep('\t', indent)..tostring(v)..': '..tostring(value))
+					print(string.rep('\t', ident)..tostring(val)..': '..tostring(value))
 				end
 			end
 		end

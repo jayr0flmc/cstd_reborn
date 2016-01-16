@@ -1,0 +1,133 @@
+// -createhero npc_cstd_dummy_test_dummy enemy
+
+
+
+	//=================================================================================
+	// GENERAL: basic
+	//=================================================================================
+	"basic"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"ScriptFile"							"abilities/"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"					"modifier_invulnerable"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"CastFilterRejectCaster"				"0"
+		"IsCastableWhileHidden"					"0"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Targeting
+		//---------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_NONE"
+		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"					""
+		
+		// Animation
+		//---------------------------------------------------------------------------------
+		"AbilityCastPoint"						"0.0"
+		"AbilityCastAnimation"					"ACT_DOTA_DISABLED"
+		"AnimationIgnoresModelScale"			"0"
+		"AnimationPlaybackRate"					"1.0"
+		
+		// Stats
+		//---------------------------------------------------------------------------------
+		"AbilityDamage"							"0"
+		"AbilityManaCost"						"0"
+		"AbilityCooldown"						"0.0"
+		
+		// Casting & Channeling
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"						"0"
+		"AbilityCastRangeBuffer"				"250"
+		"AbilityCastMinimumRange"				"500"
+		"AbilityChannelTime"					"0.0"
+		"AbilityChannelledManaCostPerSecond"	"0"
+		"AoERadius"								"0"
+		
+		// Cooldown
+		//---------------------------------------------------------------------------------
+		"AbilitySharedCooldown"					""
+		"AbilitySharedWithTeammates"			"0"
+		
+		// Gold
+		//---------------------------------------------------------------------------------
+		"AbilityGoldCost"						"0"
+		"AbilityUpgradeGoldCost"				"0"
+		
+		// Misc
+		//---------------------------------------------------------------------------------
+		"AbilityProcsMagicStick"				"0"
+		"HotKeyOverride"						""
+		"DisplayAdditionalHeroes"				"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"invulnerable"
+			{
+				"Attributes"				"MODIFIER_ATTRIBUTE_NONE"
+				"Duration"					"0"
+				"Passive"					"1"
+				"TextureName"				"modifier_invulnerable"
+				
+				"IsBuff"					"1"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				
+				"EffectName"				""
+				"EffectAttachType"			""
+				
+				"StatusEffectName"			""
+				"StatusEffectPriority"		"0"
+				
+				"OverrideAnimation"			"ACT_DOTA_DISABLED"
+				
+				"Aura"						""
+				"Aura_Radius"				"0"
+				"Aura_Teams"				""
+				"Aura_Types"				""
+				"Aura_Flags"				""
+				"Aura_ApplyToCaster"		"0"
+				
+				"AllowIllusionDuplicate"	"0"
+				
+				// Modifier Properties
+				//-------------------------------------------------------------------------
+				"Properties" {}
+				
+				// Modifier States
+				//-------------------------------------------------------------------------
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"ThinkInterval"				"1.0"
+			}
+		}
+		
+		// Events & Actions
+		//---------------------------------------------------------------------------------
+		
+		// Pre-Caching
+		//---------------------------------------------------------------------------------
+		"precache" {}
+	}

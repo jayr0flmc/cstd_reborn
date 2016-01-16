@@ -4,9 +4,9 @@
 "DOTAHeroes"
 {
 	//=================================================================================
-	// BUILDER: Tinker
+	// HERO: Pistol Guy
 	//=================================================================================
-	"npc_cstd_builder_tinker"
+	"npc_cstd_hero_pistol_guy"
 	{
 		// Overriding
 		//---------------------------------------------------------------------------------
@@ -20,12 +20,14 @@
 		// Abilities
 		//---------------------------------------------------------------------------------
 		"AbilityLayout"				"6"
-		"Ability1"					"build_tower_usp45_scripted"
-		"Ability2"					"build_tower_usp45_datadriven"
-		"Ability3"					""
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
+		"Ability1"					"build_tower_usp45"
+		"Ability2"					"build_tower_fiveseven"
+		"Ability3"					"build_tower_p228"
+		"Ability4"					"build_tower_desert_eagle"
+		"Ability5"					"build_tower_dual_berettas"
+		"Ability6"					"pistol_guy_swap_tower_bar"
+		"Ability7"					"true_sight"
+		"Ability8"					"invulnerable"
 		
 		// Armor
 		//---------------------------------------------------------------------------------
@@ -35,19 +37,19 @@
 		// Attack
 		//---------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"153"
-		"AttackDamageMax"			"171"
+		"AttackDamageMin"			"301"
+		"AttackDamageMax"			"350"
 		"AttackDamageType"			"DAMAGE_TYPE_PURE"
 		"AttackRate"				"0.5"
 		"AttackAnimationPoint"		"0.5"
 		"AttackAcquisitionRange"	"500"
 		"AttackRange"				"500"
-		"ProjectileModel"			"tinker_base_attack"
+		//"ProjectileModel"			""
 		"ProjectileSpeed"			"1000"
 		
 		// Attributes
 		//---------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_MAX"
 		"AttributeBaseStrength"		"0"
 		"AttributeStrengthGain"		"0"
 		"AttributeBaseIntelligence"	"0"
@@ -68,7 +70,7 @@
 		
 		// Movement
 		//---------------------------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"400"
 		"MovementTurnRate"			"0.6"
 		"HasAggressiveStance"		"0"
@@ -91,22 +93,5 @@
 		//---------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"1800"
-		
-		// Inventory
-		//---------------------------------------------------------------------------------
-		"HasInventory"				"0"
-		
-		// Voice
-		//---------------------------------------------------------------------------------
-		"VoiceBackgroundSound"		""
-		
-		// Offset
-		//---------------------------------------------------------------------------------
-		"HealthBarOffset"			"180"
-		
-		// Idle
-		//---------------------------------------------------------------------------------
-		"IdleExpression"			"scenes/tinker/tinker_exp_idle_01.vcd"
-		"IdleSoundLoop"				""
 	}
 }

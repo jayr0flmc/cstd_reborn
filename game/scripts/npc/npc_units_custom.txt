@@ -1,33 +1,64 @@
-// Dota Units File
+// Units File
 "DOTAUnits"
 {
 	"Version"	"1"
 	
 	//=================================================================================
-	// Tower: USP .45
+	// BUILDING: Tower - USP .45
 	//=================================================================================
-	"npc_cstd_tower_usp45"
+	"npc_cstd_building_tower_usp45"
 	{
 		// General
 		//---------------------------------------------------------------------------------
-		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/items/wards/alliance_ward/alliance_ward.vmdl"
-		"ModelScale"					"1.0"
-		"SoundSet"						"Tower.Water"
-		"MinimapIcon"					"minimap_tower"
-		"MinimapIconSize"				"256"
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
 		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/esl_wardchest_sibling_spotter/esl_wardchest_sibling_spotter.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"building_tower_usp45"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
 		
 		// Abilities
 		//---------------------------------------------------------------------------------
-		"Ability1"						""
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
 		"Ability2"						""
 		"Ability3"						""
 		"Ability4"						""
 		"Ability5"						""
 		"Ability6"						""
-		"Ability7"						""
-		"Ability8"						""
 		
 		// Armor
 		//---------------------------------------------------------------------------------
@@ -39,13 +70,19 @@
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"				"401"
 		"AttackDamageMax"				"425"
-		"AttackDamageType"				"DAMAGE_TYPE_PURE"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"					"0.2"
 		"AttackAnimationPoint"			"0.0"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
 		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
 		"ProjectileSpeed"				"2500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		
 		// Attributes
 		//---------------------------------------------------------------------------------
@@ -75,6 +112,8 @@
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
 		"MovementSpeed"					"0"
 		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
 		
 		// Status
 		//---------------------------------------------------------------------------------
@@ -82,72 +121,2270 @@
 		"StatusHealthRegen"				"0.0"
 		"StatusMana"					"0"
 		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
 		
 		// Team
 		//---------------------------------------------------------------------------------
 		"TeamName"						"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
 		//---------------------------------------------------------------------------------
 		"VisionDaytimeRange"			"900"
 		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Fiveseven
+	//=================================================================================
+	"npc_cstd_building_tower_fiveseven"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/heroes/venomancer/venomancer_ward.vmdl"
+		"ModelScale"					"0.75"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"building_tower_fiveseven"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"slow_poison"
+		"Ability3"						"true_sight"
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"251"
+		"AttackDamageMax"				"275"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.9"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - P228 Sig Sauer
+	//=================================================================================
+	"npc_cstd_building_tower_p228"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/tuskarr/sigil/glaciomarine_sigil/glaciomarine_sigil.vmdl"
+		"ModelScale"					"0.75"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"building_tower_fiveseven"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"slow_poison"
+		"Ability3"						"true_sight"
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"251"
+		"AttackDamageMax"				"275"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.9"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Desert Eagle .50
+	//=================================================================================
+	"npc_cstd_building_tower_desert_eagle"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/beastmaster/hawk/fotw_eagle/fotw_eagle.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"building_tower_desert_eagle"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"headshot"
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"301"
+		"AttackDamageMax"				"325"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.5"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"700"
+		"AttackRange"					"700"
+		"AttackRangeBuffer"				"700"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2000"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Dual Berettas Elites
+	//=================================================================================
+	"npc_cstd_building_tower_dual_berettas"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/jakiro_pyrexae_ward/jakiro_pyrexae_ward.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_dual_berettas"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"headshot"
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"301"
+		"AttackDamageMax"				"325"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.1"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - HE Grenade
+	//=================================================================================
+	"npc_cstd_building_tower_he_grenade"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/observer_ward_bundle.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_he_grenade"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"401"
+		"AttackDamageMax"				"425"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"700"
+		"AttackRangeBuffer"				"700"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"3500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Smoke Grenade
+	//=================================================================================
+	"npc_cstd_building_tower_smoke_grenade"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/sentry_ward_bundle.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_smoke_grenade"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"frost_breath"
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"401"
+		"AttackDamageMax"				"425"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"700"
+		"AttackRangeBuffer"				"700"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"3500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Admin Slap
+	//=================================================================================
+	"npc_cstd_building_tower_admin_slap"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/esl_wardchest_radling_ward/esl_wardchest_radling_ward.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_admin_slap"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"slow_poison"
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"301"
+		"AttackDamageMax"				"325"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.5"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"1000"
+		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"1000"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Galil
+	//=================================================================================
+	"npc_cstd_building_tower_galil"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/alliance_ward/alliance_ward.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_galil"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"801"
+		"AttackDamageMax"				"850"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.1"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRange"					"1000"
+		"AttackRangeBuffer"				"1000"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"1800"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}
+	
+	//=================================================================================
+	// BUILDING: Tower - Famas
+	//=================================================================================
+	"npc_cstd_building_tower_famas"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/deadwatch_ward/deadwatch_ward.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_famas"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"801"
+		"AttackDamageMax"				"850"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.15"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRange"					"1000"
+		"AttackRangeBuffer"				"1000"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"1800"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
 	}
 	
 	
 	
-	"npc_dota_creature_gnoll_assassin"
+	//=================================================================================
+	// CREATURE: Creep Wave - Ghoul
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_ghoul"
 	{
-		"Model"	"models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"
-		"BaseClass"	"npc_dota_creature"
-		"SoundSet"	"n_creep_Ranged"
-		"GameSoundsFile"	"soundevents/game_sounds_creeps.vsndevts"
-		"Level"	"1"
-		"ModelScale"	".9"
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"ArmorPhysical"	"1"
-		"AttackCapabilities"	"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"	"30"
-		"AttackDamageMax"	"36"
-		"AttackRate"	"1.6"
-		"AttackAnimationPoint"	"0.4"
-		"AttackAcquisitionRange"	"800"
-		"AttackRange"	"500"
-		"ProjectileModel"	"particles/neutral_fx/gnoll_base_attack.vpcf"
-		"ProjectileSpeed"	"1500"
-		"RingRadius"	"40"
-		"HealthBarOffset"	"170"
-		"BountyXP"	"24"
-		"BountyGoldMin"	"21"
-		"BountyGoldMax"	"29"
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"	"270"
-		"StatusHealth"	"75"
-		"StatusHealthRegen"	"0.5"
-		"StatusMana"	"0"
-		"StatusManaRegen"	"0.0"
-		"VisionDaytimeRange"	"400"
-		"VisionNighttimeRange"	"400"
-		"TeamName"	"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"	"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"	"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/heroes/life_stealer/life_stealer.vmdl"
+		"ModelScale"					"0.75"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"5"
+		"BountyGoldMax"					"5"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"275"
+		"MovementTurnRate"				"3.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"400"
+		"StatusHealthRegen"				"2.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
 		"Creature"
 		{
-			"HPGain"	"50"
-			"DamageGain"	"2"
-			"ArmorGain"	"0.25"
-			"MagicResistGain"	"0.1"
-			"MoveSpeedGain"	"1"
-			"BountyGain"	"3"
-			"XPGain"	"15"
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
 		}
-
 	}
-
+	
+	//=================================================================================
+	// CREATURE: Creep Wave - Zombie
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_zombie"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/heroes/undying/undying_minion.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"6"
+		"BountyGoldMax"					"6"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"210"
+		"MovementTurnRate"				"0.5"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"800"
+		"StatusHealthRegen"				"0.5"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	}
+	
+	//=================================================================================
+	// CREATURE: Creep Wave - Zombie
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_skeleton_archer"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"7"
+		"BountyGoldMax"					"7"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"220"
+		"MovementTurnRate"				"0.5"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"1200"
+		"StatusHealthRegen"				"0.5"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	}
+	
+	//=================================================================================
+	// CREATURE: Creep Wave - Skeleton Archer
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_skeleton_archer"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_range.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"7"
+		"BountyGoldMax"					"7"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"220"
+		"MovementTurnRate"				"0.5"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"1200"
+		"StatusHealthRegen"				"0.5"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	}
+	
+	//=================================================================================
+	// CREATURE: Creep Wave - Acolyte
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_acolyte"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/heroes/vengeful/vengeful.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"8"
+		"BountyGoldMax"					"8"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"240"
+		"MovementTurnRate"				"0.6"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"1500"
+		"StatusHealthRegen"				"0.5"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			
+			//"AttachWearables"
+			//{
+			//	"Wearable1" { "ItemDef" "63" }
+			//}
+		}
+	}
+	
+	//=================================================================================
+	// CREATURE: Creep Wave - Skeleton Warrior
+	//=================================================================================
+	"npc_cstd_creature_creep_wave_skeleton_warrior"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_creep_wave"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"256"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"5"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.0"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"					"0"
+		"AttackRangeBuffer"				"0"
+		"ProjectileModel"				""
+		"ProjectileSpeed"				"0"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"9"
+		"BountyGoldMax"					"9"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"300"
+		"MovementTurnRate"				"0.5"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"2500"
+		"StatusHealthRegen"				"2.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	}
 }

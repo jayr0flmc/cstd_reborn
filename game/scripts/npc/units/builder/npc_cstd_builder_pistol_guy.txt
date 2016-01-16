@@ -1,0 +1,181 @@
+	//=================================================================================
+	// BUILDER: Pistol Guy
+	//=================================================================================
+	"npc_cstd_creature_builder_pistol_guy"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_builder"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/heroes/tinker/tinker.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						"Hero.Tinker"
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					"scenes/tinker/tinker_exp_idle_01.vcd"
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_creep"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"0"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		//"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"creature_builder_pistol_guys"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"build_tower_usp45"
+		"Ability2"						"build_tower_fiveseven"
+		"Ability3"						"build_tower_p228"
+		"Ability4"						"build_tower_desert_eagle"
+		"Ability5"						"build_tower_dual_berettas"
+		"Ability6"						"pistol_guy_swap_tower_bar"
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"301"
+		"AttackDamageMax"				"350"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.5"
+		"AttackAnimationPoint"			"0.5"
+		"AttackAcquisitionRange"		"500"
+		"AttackRange"					"500"
+		"AttackRangeBuffer"				"500"
+		"ProjectileModel"				"tinker_base_attack"
+		"ProjectileSpeed"				"1000"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"70"
+		"HealthBarOffset"				"180"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"400"
+		"MovementTurnRate"				"0.6"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"100000"
+		"StatusHealthRegen"				"1.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1800"
+		"VisionNighttimeRange"			"1800"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			
+			// Wearables
+			//-----------------------------------------------------------------------------
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "465"}	// Tinker's Helmet
+				"Wearable2" {"ItemDef" "466"}	// Tinker's Head
+				"Wearable3" {"ItemDef" "464"}	// Tinker's Shoulders
+				"Wearable4" {"ItemDef" "467"}	// Tinker's Cape
+				"Wearable5" {"ItemDef" "367"}	// Tinker's Right Arm
+				"Wearable6" {"ItemDef" "463"}	// Tinker's Left Arm
+				
+				"Wearable7" {"ItemDef" "515"}	// Tinker's Ambient Effects
+			}
+		}
+	}

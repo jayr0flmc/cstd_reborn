@@ -1,0 +1,136 @@
+	//=================================================================================
+	// BUILDING: Tower - Smoke Grenade
+	//=================================================================================
+	"npc_cstd_building_tower_smoke_grenade"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"building_tower"
+		"BaseClass"						"npc_dota_building"		// DOTA_UNIT_TARGET_BUILDING
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/items/wards/jakiro_pyrexae_ward/jakiro_pyrexae_ward.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_tower"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				"npc_cstd_tower_smoke_grenade"
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"sell"
+		"Ability2"						"frost_breath"
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"401"
+		"AttackDamageMax"				"425"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"1.0"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"700"
+		"AttackRangeBuffer"				"700"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"3500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_SMALL"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"0"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+	}

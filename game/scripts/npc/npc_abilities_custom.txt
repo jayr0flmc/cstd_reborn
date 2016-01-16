@@ -1,50 +1,907 @@
-// Dota Abilities Override File
+// Dota Heroes File
 "DOTAAbilities"
 {
+	"Version"	"1"
+	
 	//=================================================================================
-	// TOWER: USP .45 - Scripted
+	// GENERAL: Invulnerable
 	//=================================================================================
-	"build_tower_usp45_scripted"
+	"invulnerable"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"					"modifier_invulnerable"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		//"AbilitySpecial" {}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"invulnerable"
+			{
+				"Passive"					"1"
+				
+				"IsBuff"					"1"
+				"IsPurgable"				"0"
+				
+				// Modifier States
+				//-------------------------------------------------------------------------
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	//=================================================================================
+	// GENERAL: True Sight
+	//=================================================================================
+	"true_sight"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"					"rubick_empty1"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"range"			"900"
+			}
+		}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"true_sight"
+			{
+				"Passive"					"1"
+				
+				"IsBuff"					"1"
+				"IsPurgable"				"0"
+				
+				"Aura_Radius"				"%range"
+				"Aura_ApplyToCaster"		"1"
+				
+				// Modifier States
+				//-------------------------------------------------------------------------
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	//=================================================================================
+	// GENERAL: sell
+	//=================================================================================
+	"sell"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"modifier_invulnerable"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Stats
+		//---------------------------------------------------------------------------------
+		"AbilityDamage"							"0"
+		"AbilityManaCost"						"0"
+		"AbilityCooldown"						"0.0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"invulnerable"
+			{
+				"Attributes"				"MODIFIER_ATTRIBUTE_NONE"
+				"Duration"					"0"
+				"Passive"					"1"
+				"TextureName"				"modifier_invulnerable"
+				
+				"IsBuff"					"1"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				
+				"EffectName"				""
+				"EffectAttachType"			""
+				
+				"StatusEffectName"			""
+				"StatusEffectPriority"		"0"
+				
+				"OverrideAnimation"			"ACT_DOTA_DISABLED"
+				
+				"Aura"						""
+				"Aura_Radius"				"0"
+				"Aura_Teams"				""
+				"Aura_Types"				""
+				"Aura_Flags"				""
+				"Aura_ApplyToCaster"		"0"
+				
+				"AllowIllusionDuplicate"	"0"
+				
+				// Modifier Properties
+				//-------------------------------------------------------------------------
+				"Properties" {}
+				
+				// Modifier States
+				//-------------------------------------------------------------------------
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"ThinkInterval"				"1.0"
+			}
+		}
+		
+		// Events & Actions
+		//---------------------------------------------------------------------------------
+		
+		// Pre-Caching
+		//---------------------------------------------------------------------------------
+		"precache" {}
+	}
+	
+	
+	
+	//=================================================================================
+	// GENERAL: Slow Poison
+	//=================================================================================
+	"slow_poison"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"venomancer_poison_sting"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
+		
+		"CastFilterRejectCaster"				"1"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Targeting
+		//---------------------------------------------------------------------------------
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movement_slow"		"-50"
+			}
+		}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"slow_poison_modifier"
+			{
+				"Passive"					"1"
+				
+				"IsHidden"					"1"
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"slow_poison_debuff"
+					}
+				}
+			}
+			
+			
+			
+			"slow_poison_debuff"
+			{
+				"Duration"					"%duration"
+				"Passive"					"1"
+				
+				"IsDebuff"					"1"
+				
+				// Modifier Properties
+				//-------------------------------------------------------------------------
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_slow"
+				}
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"ThinkInterval"				"1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"			"TARGET"
+						"Type"				"DAMAGE_TYPE_MAGICAL"
+						"Damage"			"%damage"
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================
+	// GENERAL: Headshot!
+	//=================================================================================
+	"headshot"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"sniper_headshot"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"CastFilterRejectCaster"				"1"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"headshot_modifier"
+			{
+				"Passive"					"1"
+				
+				"IsHidden"					"1"
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+			}
+		}
+	}
+	
+	//=================================================================================
+	// GENERAL: Critical Strike x2
+	//=================================================================================
+	"crit_strike_2"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"leoric_critical_strike"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_multiplier"		"2"
+			}
+		}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"crit_strike_2_modifier"
+			{
+				"Passive"					"1"
+				
+				"IsHidden"					"1"
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"crit_strike_2_crit"
+					}
+					
+					"Random"
+					{
+						"Chance"			"%crit_chance"
+						
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"		"CASTER"
+								"ModifierName"	"crit_strike_2_crit"
+							}
+						}
+					}
+				}
+			}
+			
+			
+			
+			"crit_strike_2_crit"
+			{
+				"IsHidden"					"1"
+				
+				// Modifier Properties
+				//-------------------------------------------------------------------------
+				"Properties" {
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%damage_multiplier"
+				}
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"			"CASTER"
+						"ModifierName"		"crit_strike_2_crit"
+					}
+					
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+					}
+				}
+			}
+		}
+		
+		// Pre-Caching
+		//---------------------------------------------------------------------------------
+		"precache" {
+			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	//=================================================================================
+	// PISTOL GUY: Swap Tower Bar
+	//=================================================================================
+	"pistol_guy_swap_tower_bar"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"					"modifier_invulnerable"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial" {}
+		
+		// Modifiers
+		//---------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"invulnerable"
+			{
+				"Attributes"				"MODIFIER_ATTRIBUTE_NONE"
+				"Duration"					"0"
+				"Passive"					"1"
+				"TextureName"				"modifier_invulnerable"
+				
+				"IsBuff"					"1"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				
+				"EffectName"				""
+				"EffectAttachType"			""
+				
+				"StatusEffectName"			""
+				"StatusEffectPriority"		"0"
+				
+				"OverrideAnimation"			"ACT_DOTA_DISABLED"
+				
+				"Aura"						""
+				"Aura_Radius"				"0"
+				"Aura_Teams"				""
+				"Aura_Types"				""
+				"Aura_Flags"				""
+				"Aura_ApplyToCaster"		"0"
+				
+				"AllowIllusionDuplicate"	"0"
+				
+				// Modifier Properties
+				//-------------------------------------------------------------------------
+				"Properties" {}
+				
+				// Modifier States
+				//-------------------------------------------------------------------------
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				// Modifier Events
+				//-------------------------------------------------------------------------
+				"ThinkInterval"				"1.0"
+			}
+		}
+		
+		// Events & Actions
+		//---------------------------------------------------------------------------------
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"scripts/vscripts/abilities/builder/pistol_guy_swap_tower_bar.lua"
+				"Function"		"OnToggleOn"
+			}
+		}
+		
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/builder/pistol_guy_swap_tower_bar.lua"
+				"Function"		"OnToggleOff"
+			}
+		}
+		
+		// Pre-Caching
+		//---------------------------------------------------------------------------------
+		"precache" {}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - USP .45
+	//=================================================================================
+	"build_tower_usp45"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/builder/build_tower_usp45"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"cstd_tower_usp45"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Casting & Channeling
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"						"125"
+		"AbilityCastRangeBuffer"				"250"
+		"AbilityChannelTime"					"0.01"
+		"AoERadius"								"8"
+		
+		// Cooldown
+		//---------------------------------------------------------------------------------
+		"AbilitySharedCooldown"					"build_tower_shared_cooldown"
+		
+		// Gold
+		//---------------------------------------------------------------------------------
+		"AbilityGoldCost"						"80"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Fiveseven
+	//=================================================================================
+	"build_tower_fiveseven"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"								"ability_lua"
+		"ScriptFile"							"abilities/builder/build_tower_fiveseven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"					"cstd_tower_fiveseven"
+		
+		// Level
+		//---------------------------------------------------------------------------------
+		"MaxLevel"								"0"
+		"RequiredLevel"							"0"
+		"LevelsBetweenUpgrades"					"0"
+		
+		// Casting & Channeling
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"						"125"
+		"AbilityCastRangeBuffer"				"250"
+		"AbilityChannelTime"					"0.01"
+		"AoERadius"								"8"
+		
+		// Cooldown
+		//---------------------------------------------------------------------------------
+		"AbilitySharedCooldown"					"build_tower_shared_cooldown"
+		
+		// Gold
+		//---------------------------------------------------------------------------------
+		"AbilityGoldCost"						"60"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - P225 Sig Sauer
+	//=================================================================================
+	"build_tower_p228"
 	{
 		// General
 		//---------------------------------------------------------------------------------
 		"BaseClass"				"ability_lua"
-		"ScriptFile"			"abilities/builder_tinker/build_tower_usp45"
+		"ScriptFile"			"abilities/builder/build_tower_p228"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"	"rubick_empty1"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_NONE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_BASIC"
-		"MaxLevel"				"1"
+		"AbilityGoldCost"		"80"
+		"AbilityTextureName"	"cstd_tower_p228"
+		"MaxLevel"				"0"
 		
+		// Casting
+		//---------------------------------------------------------------------------------
 		"AbilityCastRange"		"125"
 		"AbilityCastPoint"		"0.0"
 		"AbilityCooldown"		"1.0"
 		"AbilityChanneltime"	"0.01"
 		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
 		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Desert Eagle .50
+	//=================================================================================
+	"build_tower_desert_eagle"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_desert_eagle"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"80"
+		"AbilityTextureName"	"cstd_tower_desert_eagle"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Dual Berettas Elites
+	//=================================================================================
+	"build_tower_dual_berettas"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_dual_berettas"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"80"
+		"AbilityTextureName"	"cstd_tower_dual_berettas"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
 	}
 	
 	
 	
 	//=================================================================================
-	// TOWER: USP .45 - Datadriven
+	// BUILD: Tower - HE Grenade
 	//=================================================================================
-	"build_tower_usp45_datadriven"
+	"build_tower_he_grenade"
 	{
 		// General
 		//---------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_he_grenade"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"	"rubick_empty1"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_NONE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_BASIC"
-		"MaxLevel"				"1"
+		"AbilityGoldCost"		"100"
+		"AbilityTextureName"	"cstd_tower_he_grenade"
+		"MaxLevel"				"0"
 		
+		// Casting
+		//---------------------------------------------------------------------------------
 		"AbilityCastRange"		"125"
 		"AbilityCastPoint"		"0.0"
 		"AbilityCooldown"		"1.0"
-		"AbilityChanneltime"	"1.0"
+		"AbilityChanneltime"	"0.01"
 		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
 		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Smoke Grenade
+	//=================================================================================
+	"build_tower_smoke_grenade"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_smoke_grenade"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"100"
+		"AbilityTextureName"	"cstd_tower_smoke_grenade"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Admin Slap
+	//=================================================================================
+	"build_tower_admin_slap"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_admin_slap"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"80"
+		"AbilityTextureName"	"rubick_empty2"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Galil
+	//=================================================================================
+	"build_tower_galil"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_galil"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"100"
+		"AbilityTextureName"	"cstd_tower_galil"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
+	}
+	
+	//=================================================================================
+	// BUILD: Tower - Famas
+	//=================================================================================
+	"build_tower_famas"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/builder/build_tower_famas"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityGoldCost"		"300"
+		"AbilityTextureName"	"cstd_tower_famas"
+		"MaxLevel"				"0"
+		
+		// Casting
+		//---------------------------------------------------------------------------------
+		"AbilityCastRange"		"125"
+		"AbilityCastPoint"		"0.0"
+		"AbilityCooldown"		"1.0"
+		"AbilityChanneltime"	"0.01"
+		"AbilityCastAnimation"	"ACT_DOTA_DISABLED"
+		"AbilityDamage"			"0"
+		
+		// Special
+		//---------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				""
+			}
+		}
 	}
 }

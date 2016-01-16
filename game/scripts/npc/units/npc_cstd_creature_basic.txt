@@ -1,0 +1,167 @@
+	//=================================================================================
+	// CREATURE: Basic
+	//=================================================================================
+	"npc_cstd_creature_basic"
+	{
+		// General
+		//---------------------------------------------------------------------------------
+		"UnitLabel"						"creature_basic"
+		"BaseClass"						"npc_dota_creature"		// DOTA_UNIT_TARGET_BASIC
+		"Level"							"1"
+		
+		// Model
+		//---------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/chicken.vmdl"
+		"ModelScale"					"1.0"
+		
+		// Sound
+		//---------------------------------------------------------------------------------
+		"SoundSet"						""
+		"GameSoundsFile"				""
+		"IdleSoundLoop"					""
+		
+		// Minimap Icon
+		//---------------------------------------------------------------------------------
+		"MinimapIcon"					"minimap_"
+		"MinimapIconSize"				"512"
+		
+		// Unit Settings
+		//---------------------------------------------------------------------------------
+		"AutoAttacksByDefault"			"1"
+		
+		"IsAncient"						"0"
+		"IsNeutralUnitType"				"0"
+		"IsSummoned"					"0"
+		"CanBeDominated"				"0"
+		"ConsideredHero"				"0"
+		"HasInventory"					"0"
+		
+		"ShouldDoFlyHeightVisual"		"0"
+		"WakesNeutrals"					"0"
+		
+		// Selection
+		//---------------------------------------------------------------------------------
+		"SelectionGroup"				""
+		"SelectOnSpawn"					"0"
+		"IgnoreAddSummonedToSelection"	"1"
+		
+		// Abilities
+		//---------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						""
+		"Ability2"						""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		
+		// Armor
+		//---------------------------------------------------------------------------------
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		
+		// Attack
+		//---------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"				"401"
+		"AttackDamageMax"				"425"
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"					"0.2"
+		"AttackAnimationPoint"			"0.0"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"800"
+		"AttackRangeBuffer"				"800"
+		"ProjectileModel"				"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"				"2500"
+		
+		// Combat
+		//---------------------------------------------------------------------------------
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		
+		// Attributes
+		//---------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_MAX"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		
+		// Bounty
+		//---------------------------------------------------------------------------------
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		
+		// Bounds
+		//---------------------------------------------------------------------------------
+		"BoundsHullName"				"DOTA_HULL_SIZE_BARRACKS"
+		"ProjectileCollisionSize"		"50"
+		"RingRadius"					"32"
+		"HealthBarOffset"				"260"
+		
+		// Movement
+		//---------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"					"0"
+		"MovementTurnRate"				"1.0"
+		"HasAggressiveStance"			"0"
+		"FollowRange"					"100"
+		
+		// Status
+		//---------------------------------------------------------------------------------
+		"StatusHealth"					"5000"
+		"StatusHealthRegen"				"0.0"
+		"StatusMana"					"0"
+		"StatusManaRegen"				"0.0"
+		"StatusStartingMana"			"-1"
+		
+		// Team
+		//---------------------------------------------------------------------------------
+		"TeamName"						"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//---------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"900"
+		"VisionNighttimeRange"			"600"
+		
+		// Bots & AI
+		//---------------------------------------------------------------------------------
+		"vscripts"						""
+		"UseNeutralCreepBehavior"		"0"
+		"AttackDesire"					"0.0"
+		
+		// Creature Data
+		//---------------------------------------------------------------------------------
+		"Creature"
+		{
+			// Creature Data
+			//-----------------------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+			
+			"CanRespawn"				"0"
+			
+			// Level Up Parameters
+			//-----------------------------------------------------------------------------
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	}

@@ -1,0 +1,111 @@
+"lang"
+{
+	"Language"		"English"
+	
+	"Tokens"
+	{
+		// ADDONS
+		"addon_game_name"				"Counter-Strike TD: Reborn"
+		"addon_game_version"			"0.0.0.1"
+		
+		// GAMEMODE
+		"DOTA_GoodGuys"					"Counter-Terrorists"
+		"DOTA_BadGuys"					"Evil Monsters"
+		
+		
+		
+		//=================================================================================
+		// ABILITIES
+		//=================================================================================
+		// GENERAL: Invulnerable
+		"DOTA_Tooltip_invulnerable"								"Invulnerable"
+		"DOTA_Tooltip_Ability_invulnerable"						"Invulnerable"
+		// GENERAL: True Sight
+		"DOTA_Tooltip_true_sight"								"True Sight"
+		"DOTA_Tooltip_Ability_true_sight"						"True Sight"
+		"DOTA_Tooltip_Ability_true_sight_range"					"RANGE: "
+		// GENERAL: Slow Poison
+		"DOTA_Tooltip_slow_poison"								"Slow Poison"
+		"DOTA_Tooltip_Ability_slow_poison"						"Slow Poison"
+		"DOTA_Tooltip_Ability_slow_poison_Description"			""
+		"DOTA_Tooltip_Ability_slow_poison_duration"				"DURATION: "
+		"DOTA_Tooltip_Ability_slow_poison_damage"				"DAMAGE PER SECOND: "
+		"DOTA_Tooltip_Ability_slow_poison_movement_slow"		"MOVEMENT SLOW: "
+		
+		
+		
+		// PISTOL GUY: Swap Tower Bar
+		"DOTA_Tooltip_Ability_pistol_guy_swap_tower_bar"				"Toggle Tower Bar"
+		"DOTA_Tooltip_Ability_pistol_guy_swap_tower_bar_Description"	"Toggle between the buildable towers."
+		"DOTA_Tooltip_Ability_pistol_guy_swap_tower_bar_Note0"			"This is needed because the 6slot limit of Dota 2."
+		
+		// BUILD: Tower - USP .45
+		"DOTA_Tooltip_Ability_build_tower_usp45"						"Build USP .45"
+		"DOTA_Tooltip_Ability_build_tower_usp45_Description"			"Build an USP .45 Tower."
+		"DOTA_Tooltip_Ability_build_tower_usp45_Lore"					"Universal Self-Loading Pistol."
+		"DOTA_Tooltip_Ability_build_tower_usp45_Note0"					"Good for first rounds."
+		"DOTA_Tooltip_Ability_build_tower_usp45_damage"					"DAMAGE: 401 - 425"
+		// BUILD: Tower - Fiveseven
+		"DOTA_Tooltip_Ability_build_tower_fiveseven"					"Build Fiveseven"
+		"DOTA_Tooltip_Ability_build_tower_fiveseven_Description"		"Build a Fiveseven Tower."
+		"DOTA_Tooltip_Ability_build_tower_fiveseven_Lore"				"This gun should be strong but since it's weak in CS it's weak in this too."
+		"DOTA_Tooltip_Ability_build_tower_fiveseven_Note0"				"Only reason to make this is for Magic Sentry, Slow Poison and Web abilities."
+		"DOTA_Tooltip_Ability_build_tower_fiveseven_damage"				"DAMAGE: 251 - 275"
+		// BUILD: Tower - P228 Sig Sauer
+		"DOTA_Tooltip_Ability_build_tower_p228"							"Build P228 Sig Sauer"
+		"DOTA_Tooltip_Ability_build_tower_p228_Description"				"Build a P228 Sig Sauer Tower."
+		"DOTA_Tooltip_Ability_build_tower_p228_Note0"					"Single fire weapon with heavy damage."
+		"DOTA_Tooltip_Ability_build_tower_p228_damage"					"DAMAGE: 301 - 325"
+		// BUILD: Tower - Desert Eagle .50
+		"DOTA_Tooltip_Ability_build_tower_desert_eagle"					"Build Desert Eagle .50"
+		"DOTA_Tooltip_Ability_build_tower_desert_eagle_Description"		"Build a Desert Eagle .50 Tower."
+		"DOTA_Tooltip_Ability_build_tower_desert_eagle_Note0"			"The most powerful pistol, but a little slower than the rest."
+		"DOTA_Tooltip_Ability_build_tower_desert_eagle_damage"			"DAMAGE: 301 - 325"
+		// BUILD: Tower - Dual Berettas Elites
+		"DOTA_Tooltip_Ability_build_tower_dual_berettas"				"Build Dual Berettas Elites"
+		"DOTA_Tooltip_Ability_build_tower_dual_berettas_Description"	"Build a Dual Berettas Elites Tower."
+		"DOTA_Tooltip_Ability_build_tower_dual_berettas_Lore"			"Dual wielding pistols with rapid fire."
+		"DOTA_Tooltip_Ability_build_tower_dual_berettas_damage"			"DAMAGE: 301 - 325"
+		
+		
+		
+		
+		
+		// BUILDERS
+		"DOTA_Tooltip_npc_cstd_builder_pistol_guy"				"Pistol Guy"
+		
+		
+		
+		// TOWERS
+		"npc_cstd_building_tower_usp45"							"USP .45"
+		"#DOTA_Tooltip_npc_cstd_building_tower_usp45"			"USP .45"
+		
+		"DOTA_Tooltip_npc_cstd_building_tower_fiveseven"		"Fiveseven"
+		
+		"DOTA_Tooltip_npc_cstd_building_tower_p228"				"P228 Sig Sauer"
+		
+		"DOTA_Tooltip_npc_cstd_building_tower_desert_eagle"		"Desert Eagle .50"
+		
+		"DOTA_Tooltip_npc_cstd_building_tower_dual_berettas"	"Dual Berettas Elites"
+		
+		
+		
+		// WAVE-CREEPS
+		"DOTA_Tooltip_npc_cstd_wavecreep_ghoul"					"Ghoul"
+		"DOTA_Tooltip_npc_cstd_wavecreep_zombie"				"Zombie"
+		"DOTA_Tooltip_npc_cstd_wavecreep_skeleton_archer"		"Skeleton Archer"
+		"DOTA_Tooltip_npc_cstd_wavecreep_acolyte"				"Acolyte"
+		"DOTA_Tooltip_npc_cstd_wavecreep_skeleton_warrior"		"Skeleton Warrior"
+		"DOTA_Tooltip_npc_cstd_wavecreep_satyr_trickster"		"Satyr Trickster"
+		"DOTA_Tooltip_npc_cstd_wavecreep_fel_orc_grunt"			"Fel Orc Grunt"
+		"DOTA_Tooltip_npc_cstd_wavecreep_shade"					"Shade"
+		"DOTA_Tooltip_npc_cstd_wavecreep_mud_golem"				"Mud Golem"
+		"DOTA_Tooltip_npc_cstd_wavecreep_ice_troll_berserker"	"Ice Troll Berserker"
+		"DOTA_Tooltip_npc_cstd_wavecreep_quillboar_hunter"		"Quillboar Hunter"
+		"DOTA_Tooltip_npc_cstd_wavecreep_harpy_scout"			"Harpy Scout"
+		"DOTA_Tooltip_npc_cstd_wavecreep_sasquatch"				"Sasquatch"
+		"DOTA_Tooltip_npc_cstd_wavecreep_ogre_warrior"			"Ogre Warrior"
+		"DOTA_Tooltip_npc_cstd_wavecreep_centaur_outrunner"		"Centaur Outrunner"
+		"DOTA_Tooltip_npc_cstd_wavecreep_felguard"				"Felguard"
+	}
+}
